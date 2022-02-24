@@ -1,6 +1,6 @@
-# Election_Analysis
+# Election Audit
 
-## Project Overview
+## Overview of Election Audit
 In this project, a CSV file containing election data was analyzed to determine election results. Using Python to analyze election data, the following results were determined:
 
   1. The total number of votes cast.
