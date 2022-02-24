@@ -4,7 +4,7 @@ import os
 #Assign Variable to File and Path
 file_to_load = ('/Users/kaitlynhopkins/Documents/Data Analysis/Resources/election_results.csv')
 #Open file to write data
-file_to_save = os.path.join("analysis", "election_analysis.txt")
+file_to_save = ('/Users/kaitlynhopkins/Documents/Data Analysis/Election_Analysis/analysis/election_analysis.txt')
 
 #1. Initialize the total Votes to 0
 total_votes = 0
@@ -45,36 +45,51 @@ with open(file_to_load) as election_data:
 
         #10. Add candidate votes after new key is added to dictionary
         candidate_votes[candidate_name] += 1
+#Save Results to txt file
+with open(file_to_save, "w") as txt_file:
 
-    
-# Data we need to retrieve
-#1. Total number of Votes
-print(total_votes)
-#2. List of Candidates who received Votes.
-print(candidate_options)
-#3. Total votes received for each candidates.
-print(candidate_votes)
-#4. Percentage of Votes Won
-#11. Iterate through candidates dictionary
-for candidate_name in candidate_votes:
-    #12. set value variable to votes for each value in dictionary
-    votes = candidate_votes[candidate_name]
-    #13. Calculate percentage votes based on each value
-    percentage_votes = float(votes) / float(total_votes) * 100
-    #14. Display candidate name and perecentage of votes received
-    print(f"{candidate_name}: {percentage_votes:.1f}% ({votes:,})\n")
-#5. Winner of Election based on populare vote.
-    #16. Set the winning total to the highest votes and percentage per candidate
-    if (votes > winning_count) and (percentage_votes > winning_percentage):
-        winning_count = votes
-        winning_percentage = percentage_votes
-        #set the the winning candidate to candidate name
-        winning_candidate = candidate_name
+    election_results = (
+        f"Election Results\n"
+        f"----------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-----------------------\n"
+    )
+    print(election_results, end='')
+    #to write code to output file
+    txt_file.write(election_results)
+    # Data we need to retrieve
+    ##1. Total number of Votes
+    #print(total_votes)
+    ##2. List of Candidates who received Votes.
+    #print(candidate_options)
+    ##3. Total votes received for each candidates.
+    #print(candidate_votes)
+    #4. Percentage of Votes Won
+    #11. Iterate through candidates dictionary
+    for candidate_name in candidate_votes:
+        #12. set value variable to votes for each value in dictionary
+        votes = candidate_votes[candidate_name]
+        #13. Calculate percentage votes based on each value
+        percentage_votes = float(votes) / float(total_votes) * 100
+        #14. Display candidate name and perecentage of votes received
+       # print(f"{candidate_name}: {percentage_votes:.1f}% ({votes:,})\n")
+        candidate_results = (
+           f"{candidate_name}: {percentage_votes:.1f}% ({votes:,})\n")
+        print(candidate_results)
+        txt_file.write(candidate_results)
+    #5. Winner of Election based on populare vote.
+        #16. Set the winning total to the highest votes and percentage per candidate
+        if (votes > winning_count) and (percentage_votes > winning_percentage):
+            winning_count = votes
+            winning_percentage = percentage_votes
+            #set the the winning candidate to candidate name
+            winning_candidate = candidate_name
 
-winning_candidate_summary = (
-    f"--------------------------\n"
-    f"Winner: {winning_candidate}\n"
-    f"Winning Vote Coutn: {winning_count:,}\n"
-    f"Winning Percentage: {winning_percentage: .1f}%\n"
-    f"---------------------------\n")
-print(winning_candidate_summary)
+    winning_candidate_summary = (
+        f"--------------------------\n"
+        f"Winner: {winning_candidate}\n"
+        f"Winning Vote Coutn: {winning_count:,}\n"
+        f"Winning Percentage: {winning_percentage: .1f}%\n"
+        f"---------------------------\n")
+    print(winning_candidate_summary)
+    txt_file.write(winning_candidate_summary)
