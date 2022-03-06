@@ -37,4 +37,7 @@ Software: Python 3.10.2 VS code 1.64.2
 
 ## Election-Audit Summary
 - Give at least two examples of how this script can be modified to be used for other elections.
+  -   The codes used to analyze election results for this congressional election may be easily used to analyze other election data by simply modifying the code to match the location of data in the csv file containing result data. 
+    -   1. In lines 47 and 50, "candidate_name = row[2]" and "county_name = row[1]", the numbers reference the columns for candidate names and county names to aggregate and count. These numbers would be modified depending on the column location of a different election set. 
+    -   2. Alternatively, functions can be used in python to include the counting operations for specific variables. A function with the paramters of candidate name and county name, would have the code block that counts the number of votes, percentage of votes, and defines the winners. Then the function could be called to display the candidate and county votes per election. 
 
