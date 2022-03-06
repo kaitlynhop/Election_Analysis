@@ -22,7 +22,12 @@ Software: Python 3.10.2 VS code 1.64.2
 - How many votes were cast in this congressional election?
   -   The total votes cast in this congressional election were 369,711.
 - Provide a breakdown of the number of votes and the percentage of total votes for each county in the precinct.
+  -   Votes per County:
+  -   Jefferson: 10.5% (38,855)
+  -   Denver: 82.8% (306,055)
+  -   Arapahoe: 6.7% (24,801) 
 - Which county had the largest number of votes?
+  -   Denver County had the largest number of votes with 306,055 votes, which was 82.8% of the total votes. 
 - Provide a breakdown of the number of votes and the percentage of the total votes each candidate received.
   -   Charles Casper Stockham: 23.0% (85,213)
   -   Diana DeGette: 73.8% (272,892)
