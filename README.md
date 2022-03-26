@@ -15,8 +15,8 @@ In this project, a CSV file containing election data was analyzed to determine e
 The purpose of this project was to automate election data using Python, to quickly sort and generate results.
 
 ## Resources
-Data Source: election_results.csv
-Software: Python 3.10.2 VS code 1.64.2
+**Data Source:** [Election data](/Resources/election_results.csv)
+<br>**Software:** Python 3.10.2 VS code 1.64.2
 
 ## Election-Audit Results
 - How many votes were cast in this congressional election?
